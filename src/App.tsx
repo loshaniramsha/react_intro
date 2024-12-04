@@ -19,6 +19,9 @@ function App() {
         setEmail('');
         setPhone('');
     }
+    function deleteCustomer() {
+        setCustomers(   (customers)=>customers.slice(0,-1));
+    }
 
     return (
         <>
@@ -26,9 +29,10 @@ function App() {
             <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}/>
             <input type="text" placeholder="Phone" value={phone} onChange={(e) => setPhone(e.target.value)}/>
 
-            <br /> <br/>
+            <br/> <br/>
             <button onClick={addCustomer}>Add Customer</button>
-            <br />
+            <button onClick={deleteCustomer}>Delete Customer</button>
+            <br/>
 
             <h3>Customers List:</h3>
             <ul>
